@@ -35,9 +35,10 @@ Feature: Web and Api Challenge
 #  API : Write a test that makes a GET request to the API mentioned in the user story and does the
 #  following using the response content (include any other validations that you deem necessary):
   Scenario: GET request to validate its content
-    Given GET CreateApi endpoint is configured
-    Then the status code should be 200
-      And validate total states count is "48"
-      And Validate only one state has a min age of 19
-      And Validate that "AlabamaABC" should be the 'label' of the state that has a min age of 19
-      And Validate that "Georgia" is the only state with min loan amount requirement of $3005
+#    Given GET CreateApi endpoint is configured
+#    Then the status code should be 200
+#      And validate total states count is "48"
+#      And Validate only one state has a min age of 19
+#      And Validate that "AlabamaABC" should be the 'label' of the state that has a min age of 19
+#      And Validate that "Georgia" is the only state with min loan amount requirement of $3005
+    Given GET ImagenesApi endpoint is configured

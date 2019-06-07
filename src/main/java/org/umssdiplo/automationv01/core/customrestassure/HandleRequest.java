@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
  */
 public class HandleRequest {
 
-    private static RequestSpecification REQUEST = Credify.getInstance().getRequestSpecification(); // .getRequestSpecification();
+    private static RequestSpecification REQUEST = ImageApi.getInstance().getRequestSpecification(); // .getRequestSpecification();
 
     /**
      * Build the Get method request
@@ -24,8 +24,8 @@ public class HandleRequest {
      * @return the response body
      */
     public static Response get() throws UnsupportedEncodingException, CloneNotSupportedException, NoSuchAlgorithmException {
-        return given().spec(REQUEST)
-                .when()
+        return given().spec(REQUEST).log().method()
+                .when().log().method()
                 .get();
     }
 

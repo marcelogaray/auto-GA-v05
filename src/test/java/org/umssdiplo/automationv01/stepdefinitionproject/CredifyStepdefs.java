@@ -1,5 +1,6 @@
 package org.umssdiplo.automationv01.stepdefinitionproject;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -58,5 +59,10 @@ public class CredifyStepdefs {
         boolean isTheStateWithMinLoanAmountRequirement = credify.isTheStateWithMinLoanAmountRequirement(labelState, minLoanAmount);
 
         Assert.assertTrue(isTheStateWithMinLoanAmountRequirement, labelState.concat("is not with MIN LOAD AMOUNT required. "));
+    }
+
+    @Given("^GET ImagenesApi endpoint is configured$")
+    public void getImagenesApiEndpointIsConfigured() throws Throwable {
+        response = HandleRequest.get();
     }
 }
