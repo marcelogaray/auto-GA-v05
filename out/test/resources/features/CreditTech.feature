@@ -23,27 +23,21 @@ Feature: Web and Api Challenge
       And click 'Check your Rate' button in 'Credit Card' page
     When getting 'Your Loan Amount' value in 'Offer' top page
       And getting 'ARP' value in 'Offer' top page
-      #the following 'Loan Term' field I could not find in the UI web site
-#      And getting 'Loan Term' value in 'Offer' top page
       And getting 'Monthly Payment' value in 'Offer' top page
       And click 'Sign Out' in the top right corner in 'Offer' top page
     When the 'Login Credit Terch' page is loaded
       And fill 'Credentials' created in 'Login' page
     Then validate 'Loan Amount' match with info previously in 'Offer' top page
       And validate 'ARP' match with info previously in 'Offer' top page
-      #Not found field
-#      And validate 'Loan Term' match with info previously in 'Offer' top page
       And validate 'Monthly Payment' match with info previously in 'Offer' top page
 
-
+    
 #  API : Write a test that makes a GET request to the API mentioned in the user story and does the
 #  following using the response content (include any other validations that you deem necessary):
   Scenario: GET request to validate its content
     Given GET CreateApi endpoint is configured
     Then the status code should be 200
-      ## I dont have a valid list about the names
-      #And Validate all the state names returned are valid,
       And validate total states count is "48"
       And Validate only one state has a min age of 19
-      And Validate that "Alabama" should be the 'label' of the state that has a min age of 19
+      And Validate that "AlabamaABC" should be the 'label' of the state that has a min age of 19
       And Validate that "Georgia" is the only state with min loan amount requirement of $3005
